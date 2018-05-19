@@ -23,9 +23,11 @@
     <div class="container">
       <h1 class="jumbotron-heading">Code Challenge</h1>
       <p class="lead text-muted">Search for photos with a specific tag with the help of the Flicker API</p>
-      <p>
-        <input class="form-control" type="search" [formControl]="searchControl">
-      </p>
+      <div class="padb10">
+          <input class="form-control" type="search" [formControl]="searchControl" [(ngModel)]="searchValue">
+      </div>
+      <button class="btn btn-default" (click)="clearSearch()">Clear</button>
+
     </div>
   </section>
 <div class="album py-5 bg-light">
@@ -35,7 +37,7 @@
       <div *ngFor="let photo of photos">
         <div class="col-md-12">
           <div class="card mb-4 box-shadow" style="width: 348px;">
-            <span class="tag-title">{{tag}}</span>
+            <span class="tag-title">Image Tag</span>
             <div class="card-image">
                 <img class="card-img-top" style="height: 225px; display: block;" src="{{photo.url}}" data-holder-rendered="true">
                 <span class="views">{{photo.views}}</span>
@@ -57,10 +59,10 @@
 </div>
 </main>
 <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Back to top</a>
-      </p>
-      <p>Made with care by Omar AbdElHady</p>
-    </div>
-  </footer>
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p>Made with care by Omar AbdElHady</p>
+  </div>
+</footer>

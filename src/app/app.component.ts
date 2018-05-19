@@ -12,6 +12,7 @@ import { FlickrService } from './services/flicker.service';
   providers: [FlickrService]
 })
 export class AppComponent implements OnInit {
+  searchValue:string = '';
   searchControl = new FormControl();
   tag = this.searchControl.valueChanges;
   model$: Observable<any>;
@@ -23,5 +24,9 @@ export class AppComponent implements OnInit {
       .subscribe(value => {
         this.photos = value;
       });
+  }
+
+  clearSearch() {
+    this.searchValue = null;
   }
 }
