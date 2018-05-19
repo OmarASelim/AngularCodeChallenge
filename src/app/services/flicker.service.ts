@@ -22,7 +22,6 @@ export class FlickrService {
             .pipe(map((val) => {
                 if (val.stat === 'ok') {
                     return val.photos.photo.map((photo: any) => {
-                        console.log(photo)
                         return {
                             url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`,
                             title: photo.title,
