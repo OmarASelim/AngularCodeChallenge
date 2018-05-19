@@ -30,25 +30,26 @@
 
     </div>
   </section>
-<div class="album py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <!-- Photos Iteration -->
-      <div *ngFor="let photo of photos">
-        <div class="col-md-12">
-          <div class="card mb-4 box-shadow" style="width: 348px;">
-            <span class="tag-title">Image Tag</span>
-            <div class="card-image">
-                <img class="card-img-top" style="height: 225px; display: block;" src="{{photo.url}}" data-holder-rendered="true">
-                <span class="views">{{photo.views}}</span>
-            </div>
-            <div class="card-body">
-              <p class="card-text">Owner Name: {{photo.owner}}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <small class="text-muted">Uploaded: {{photo.dateUploaded}}</small>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <!-- Photos Iteration -->
+        <div *ngFor="let photo of photos">
+          <div class="col-md-12">
+            <div class="card mb-4 box-shadow" style="width: 348px;">
+              <span class="tag-title">{{searchValue}}</span>
+              <div class="card-image">
+                  <img class="card-img-top" style="height: 225px; display: block;" src="{{photo.url}}" data-holder-rendered="true">
+                  <span class="views">{{photo.views}}</span>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Owner Name: {{photo.owner}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <small class="text-muted">Uploaded: {{photo.dateUploaded}}</small>
+                  </div>
+                  <small class="text-muted">Taken: {{photo.datetaken}}</small>
                 </div>
-                <small class="text-muted">Taken: {{photo.datetaken}}</small>
               </div>
             </div>
           </div>
@@ -56,7 +57,6 @@
       </div>
     </div>
   </div>
-</div>
 </main>
 <footer class="text-muted">
   <div class="container">
