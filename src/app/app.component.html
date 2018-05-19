@@ -1,66 +1,66 @@
 <header>
-    <div class="collapse bg-dark" id="navbarHeader">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">About</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-dark box-shadow">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        Code<strong>Challenge</strong>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Code Challenge</h1>
+      <p class="lead text-muted">Search for photos with a specific tag with the help of the Flicker API</p>
+      <p>
+        <input class="form-control" type="search" [formControl]="searchControl">
+      </p>
+    </div>
+  </section>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <!-- Photos Iteration -->
+      <div *ngFor="let photo of photos">
+        <div class="col-md-12">
+          <div class="card mb-4 box-shadow" style="width: 348px;">
+            <span class="tag-title">{{tag}}</span>
+            <div class="card-image">
+                <img class="card-img-top" style="height: 225px; display: block;" src="{{photo.url}}" data-holder-rendered="true">
+                <span class="views">{{photo.views}}</span>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Owner Name: {{photo.owner}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <small class="text-muted">Uploaded: {{photo.dateUploaded}}</small>
+                </div>
+                <small class="text-muted">Taken: {{photo.datetaken}}</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="navbar navbar-dark bg-dark box-shadow">
-      <div class="container d-flex justify-content-between">
-        <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-          Code<strong>Challenge</strong>
-        </a>
-      </div>
+  </div>
+</div>
+</main>
+<footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Made with care by Omar AbdElHady</p>
     </div>
-  </header>
-
-  <main role="main">
-
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Code Challenge</h1>
-          <p class="lead text-muted">Search for photos with a specific tag with the help of the Flicker API</p>
-          <p>
-            <input class="form-control" type="search" [formControl]="searchControl">
-          </p>
-        </div>
-      </section>
-
-
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-            
-          <div class="row">
-              <div *ngFor="let photo of photos">
-            <div class="col-md-12">
-              <div class="card mb-4 box-shadow" style="width: 348px;">
-                <img class="card-img-top" style="height: 225px; display: block;" src="{{photo.url}}" data-holder-rendered="true">
-                <div class="card-body">
-                  <p class="card-text">{{photo.title}}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                    </div>
-                    <small class="text-muted">{{photo.datetaken}}</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-                      </div>
-        </div>
-      </div>
-    </div>
-    </main>
-    <footer class="text-muted">
-        <div class="container">
-          <p class="float-right">
-            <a href="#">Back to top</a>
-          </p>
-          <p>Made with care by Omar AbdElHady</p>
-        </div>
-      </footer>
+  </footer>

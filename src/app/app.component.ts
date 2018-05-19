@@ -13,13 +13,13 @@ import { FlickrService } from './services/flicker.service';
 })
 export class AppComponent implements OnInit {
   searchControl = new FormControl();
-
+  tag = this.searchControl.valueChanges;
   model$: Observable<any>;
   photos: Object;
   constructor(private _formBuilder: FormBuilder, private _flickrService: FlickrService) {
   }
   ngOnInit() {
-    this.searchControl.valueChanges.pipe(switchMap((query: string) => this._flickrService.getResult(query)))
+    this.tag.pipe(switchMap((query: string) => this._flickrService.getResult(query)))
       .subscribe(value => {
         this.photos = value;
       });
